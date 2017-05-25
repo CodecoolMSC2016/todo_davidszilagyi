@@ -1,0 +1,15 @@
+= Java Web Database BFA Skeleton
+
+== Running
+
+.On UNIX
+```
+./gradlew appRun
+```
+
+.On Windows
+```
+gradlew appRun
+```
+
+From IntelliJ IDEA use the Gradle `appStart` task instead of `appRun`.

@@ -1,0 +1,35 @@
+plugins {
+    id 'org.akhikhl.gretty' version '1.4.2'
+}
+
+apply plugin: 'war'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'javax.servlet:javax.servlet-api:3.1.0'
+    compile 'org.webjars:jquery:3.2.0'
+
+    // https://github.com/google/gson/blob/master/UserGuide.md#primitives-examples
+    compile 'com.google.code.gson:gson:2.8.0'
+
+    // https://github.com/FasterXML/jackson-databind#use-it
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.8.8.1'
+
+    // http://docs.oracle.com/middleware/1213/wls/WLPRG/java-api-for-json-proc.htm#WLPRG1058
+    compile 'org.glassfish:javax.json:1.0.4'
+
+    // http://stleary.github.io/JSON-java/index.html
+    compile 'org.json:json:20160810'
+
+    compile 'org.springframework:spring-jdbc:4.3.8.RELEASE'
+    runtime 'mysql:mysql-connector-java:6.0.6'
+}
+
+gretty {
+    servletContainer = 'tomcat8'
+    contextPath = '/'
+}
